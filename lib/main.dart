@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(Icons.local_drink, color: Colors.blue),
-                    SizedBox(width: 15),
+                    // SizedBox(width: 15),
                     Text(
                       'Water',
                       style: TextStyle(fontSize: 18),
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(Icons.fastfood, color: Colors.blue),
-                    SizedBox(width: 15),
+                    // SizedBox(width: 15),
                     Text(
                       'A delicious burger entrée with chilled soda on the side, '
                       'perfect for a summer day',
