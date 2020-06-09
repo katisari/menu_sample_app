@@ -20,12 +20,14 @@ class MyApp extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.local_drink),
+                  SizedBox(width: 8),
                   Text('Water'),
                 ],
               ),
               Row(
                 children: [
                   Icon(Icons.fastfood),
+                  SizedBox(width: 8),
                   Text('A delicious burger entrée with chilled soda on the side, '
                       'perfect for a summer day'),
                 ],
