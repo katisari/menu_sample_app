@@ -12,25 +12,38 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Menu'),
+          backgroundColor: Colors.cyan,
         ),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Row(
-                children: [
-                  Icon(Icons.local_drink),
-                  SizedBox(width: 8),
-                  Text('Water'),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.local_drink, color: Colors.blue),
+                    SizedBox(width: 15),
+                    Text(
+                      'Water',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Icon(Icons.fastfood),
-                  SizedBox(width: 8),
-                  Text('A delicious burger entrée with chilled soda on the side, '
-                      'perfect for a summer day'),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.fastfood, color: Colors.blue),
+                    SizedBox(width: 15),
+                    Text(
+                      'A delicious burger entrée with chilled soda on the side, '
+                      'perfect for a summer day',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
