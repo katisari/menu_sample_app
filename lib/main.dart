@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Menu());
 }
 
-class MyApp extends StatelessWidget {
+class Menu extends StatelessWidget {
+  Padding createMenuItem(Icon itemIcon, String itemText) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        children: [
+          itemIcon,
+          // SizedBox(width: 15),
+          Text(
+            itemText,
+            style: TextStyle(fontSize: 18),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,33 +34,12 @@ class MyApp extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Icon(Icons.local_drink, color: Colors.blue),
-                    // SizedBox(width: 15),
-                    Text(
-                      'Water',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Icon(Icons.fastfood, color: Colors.blue),
-                    // SizedBox(width: 15),
-                    Text(
-                      'A delicious burger entrée with chilled soda on the side, '
-                      'perfect for a summer day',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-              ),
+              createMenuItem(
+                  Icon(Icons.local_drink, color: Colors.blue), 'Water'),
+              createMenuItem(
+                  Icon(Icons.fastfood, color: Colors.blue),
+                  'A delicious burger entrée with chilled soda on the side, '
+                  'perfect for a summer day'),
             ],
           ),
         ),
