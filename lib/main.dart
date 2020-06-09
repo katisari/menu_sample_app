@@ -13,22 +13,25 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Menu'),
         ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                Icon(Icons.local_drink),
-                Text('Water'),
-              ],
-            ),
-            Row(
-              children: [
-                Icon(Icons.fastfood),
-                Text('A delicious burger entrée with chilled soda on the side, '
-                    'perfect for a summer day'),
-              ],
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.local_drink),
+                  Text('Water'),
+                ],
+              ),
+              Row(
+                children: [
+                  Icon(Icons.fastfood),
+                  Text('A delicious burger entrée with chilled soda on the side, '
+                      'perfect for a summer day'),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
