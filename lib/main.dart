@@ -5,7 +5,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,25 +14,18 @@ class MyApp extends StatelessWidget {
           title: Text('Menu'),
         ),
         body: Column(
-          children: <Widget>[
+          children: [
             Row(
               children: [
-                Icon(
-                  Icons.local_drink,
-                  size: 120.0,
-                ),
-                Text("Water"),
+                Icon(Icons.local_drink),
+                Text('Water'),
               ],
             ),
             Row(
-              children: <Widget>[
-                Icon(
-                  Icons.fastfood,
-                  size: 120.0,
-                ),
-                Text(
-                  "A delicious burger entrée with coke on the side.",
-                ),
+              children: [
+                Icon(Icons.fastfood),
+                Text('A delicious burger entrée with chilled soda on the side, '
+                    'perfect for a summer day'),
               ],
             ),
           ],
