@@ -7,11 +7,11 @@ void main() {
 class Menu extends StatelessWidget {
   Padding createMenuItem(Icon itemIcon, String itemText) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Row(
         children: [
           itemIcon,
-          // SizedBox(width: 15),
+          SizedBox(width: 15),
           Text(
             itemText,
             style: TextStyle(fontSize: 18),
@@ -30,9 +30,7 @@ class Menu extends StatelessWidget {
           title: Text('Menu'),
           backgroundColor: Colors.cyan,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
+        body:  Column(
             children: [
               createMenuItem(
                   Icon(Icons.local_drink, color: Colors.blue), 'Water'),
@@ -43,7 +41,7 @@ class Menu extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      
     );
   }
 }
