@@ -12,9 +12,11 @@ class Menu extends StatelessWidget {
         children: [
           itemIcon,
           SizedBox(width: 15),
-          Text(
-            itemText,
-            style: TextStyle(fontSize: 18),
+          Expanded(
+                      child: Text(
+              itemText,
+              style: TextStyle(fontSize: 16),
+            ),
           ),
         ],
       ),
@@ -41,7 +43,6 @@ class Menu extends StatelessWidget {
             ],
           ),
         ),
-      
     );
   }
 }
