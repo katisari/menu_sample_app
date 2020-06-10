@@ -12,11 +12,9 @@ class Menu extends StatelessWidget {
         children: [
           itemIcon,
           SizedBox(width: 15),
-          Expanded(
-                      child: Text(
-              itemText,
-              style: TextStyle(fontSize: 16),
-            ),
+          Text(
+            itemText,
+            style: TextStyle(fontSize: 16),
           ),
         ],
       ),
@@ -32,17 +30,17 @@ class Menu extends StatelessWidget {
           title: Text('Menu'),
           backgroundColor: Colors.cyan,
         ),
-        body:  Column(
-            children: [
-              createMenuItem(
-                  Icon(Icons.local_drink, color: Colors.blue), 'Water'),
-              createMenuItem(
-                  Icon(Icons.fastfood, color: Colors.blue),
-                  'A delicious burger entrée with chilled soda on the side, '
-                  'perfect for a summer day'),
-            ],
-          ),
+        body: Column(
+          children: [
+            createMenuItem(
+                Icon(Icons.local_drink, color: Colors.blue), 'Water'),
+            createMenuItem(
+                Icon(Icons.fastfood, color: Colors.blue),
+                'A delicious burger entrée with chilled soda on the side, '
+                'perfect for a summer day'),
+          ],
         ),
+      ),
     );
   }
 }
