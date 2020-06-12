@@ -5,21 +5,10 @@ void main() {
 }
 
 class Menu extends StatelessWidget {
-  Padding createMenuItem(Icon itemIcon, String itemText) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Row(
-        children: [
-          itemIcon,
-          SizedBox(width: 15),
-          Expanded(
-            child: Text(
-              itemText,
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-        ],
-      ),
+  ListTile createMenuItem(Icon itemIcon, String itemText) {
+    return ListTile(
+      leading: itemIcon,
+      title: Text(itemText),
     );
   }
 
@@ -35,34 +24,25 @@ class Menu extends StatelessWidget {
         body: Column(
           children: [
             Row(children: [
-              // Column()
               Text(
-                  'Welcome to the most delicious restaurant'),
+                  'Welcome to one of the best virtual restaurants you\'ll ever visit'),
             ]),
             // does text overflow to the widget direction? since it's column, it would overflow to the bottom?
             Row(children: [
               // Column()
-              Text(
-                  'Food Icon'),
+              Text('Food Icon'),
               VerticalDivider(),
               Text('Description'),
-            ]),
-            Row(children: [
-              Text(
-                  'Choose'),
             ]),
             Expanded(
               child: ListView(
                 children: [
-                  ListTile(
-                      leading: Icon(Icons.local_drink, color: Colors.blue),
-                      title: Text('Water')),
-                  ListTile(
-                    leading: Icon(Icons.fastfood, color: Colors.blue),
-                    title: Text(
-                        'A delicious burger entrée with chilled soda on the side, '
-                        'perfect for a summer day'),
-                  )
+                  createMenuItem(
+                      Icon(Icons.local_drink, color: Colors.blue), 'Water'),
+                  createMenuItem(
+                      Icon(Icons.fastfood, color: Colors.blue),
+                      'A delicious burger entrée with chilled soda on the side, '
+                      'perfect for a summer day'),
                 ],
               ),
             )
