@@ -13,7 +13,7 @@ class Menu extends StatelessWidget {
           itemIcon,
           SizedBox(width: 15),
           Expanded(
-                      child: Text(
+            child: Text(
               itemText,
               style: TextStyle(fontSize: 16),
             ),
@@ -32,17 +32,43 @@ class Menu extends StatelessWidget {
           title: Text('Menu'),
           backgroundColor: Colors.cyan,
         ),
-        body:  Column(
-            children: [
-              createMenuItem(
-                  Icon(Icons.local_drink, color: Colors.blue), 'Water'),
-              createMenuItem(
-                  Icon(Icons.fastfood, color: Colors.blue),
-                  'A delicious burger entrée with chilled soda on the side, '
-                  'perfect for a summer day'),
-            ],
-          ),
+        body: Column(
+          children: [
+            Row(children: [
+              // Column()
+              Text(
+                  'Welcome to the most delicious restaurant'),
+            ]),
+            // does text overflow to the widget direction? since it's column, it would overflow to the bottom?
+            Row(children: [
+              // Column()
+              Text(
+                  'Food Icon'),
+              VerticalDivider(),
+              Text('Description'),
+            ]),
+            Row(children: [
+              Text(
+                  'Choose'),
+            ]),
+            Expanded(
+              child: ListView(
+                children: [
+                  ListTile(
+                      leading: Icon(Icons.local_drink, color: Colors.blue),
+                      title: Text('Water')),
+                  ListTile(
+                    leading: Icon(Icons.fastfood, color: Colors.blue),
+                    title: Text(
+                        'A delicious burger entrée with chilled soda on the side, '
+                        'perfect for a summer day'),
+                  )
+                ],
+              ),
+            )
+          ],
         ),
+      ),
     );
   }
 }
