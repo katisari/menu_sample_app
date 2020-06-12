@@ -36,10 +36,13 @@ class Menu extends StatelessWidget {
               padding: EdgeInsets.all(10.0),
               child: Row(children: [
                 // Error 1: Overflow, surround Text with expanded to fix error
-                Text(
-                    'Welcome to Dasheats, a restaurant providing fast, '
-                    'affordable, and quality experience. '
-                    'Explore the delicious menu items below.'),
+                Expanded(
+                  child: Text(
+                      'Welcome to Dasheats, a restaurant providing fast, '
+                      'affordable, and quality experience. '
+                      'Explore the delicious menu items below.',
+                      style: TextStyle(fontSize: 15.0,)),
+                ),
               ]),
             ),
             // Error 2: RenderBox not laid out error, surround ListView with Expanded to fix error
@@ -53,25 +56,25 @@ class Menu extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FlatButton(
-                  onPressed: null,
-                  child: Text(
-                    'Pickup',
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  FlatButton(
+                    onPressed: null,
+                    child: Text(
+                      'Pickup',
+                    ),
                   ),
-                ),
-                // Error 3: Unable to see the VerticalDivider despite being in the code
-                // The divider does not cause any error messages
-                VerticalDivider(),
-                FlatButton(
-                  onPressed: null,
-                  child: Text(
-                    'Delivery',
-                  ),
-                )
-              ],
-            )
+                  // Error 3: Unable to see the VerticalDivider despite being in the code
+                  // The divider does not cause any error messages
+                  Container(child: VerticalDivider(thickness: 2.0,), height: 15.0,),
+                  FlatButton(
+                    onPressed: null,
+                    child: Text(
+                      'Delivery',
+                    ),
+                  )
+                ],
+              )
           ],
         ),
       ),
