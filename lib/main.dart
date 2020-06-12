@@ -4,21 +4,30 @@ void main() {
   runApp(Menu());
 }
 
-class Menu extends StatelessWidget {
-  ListTile createMenuItem(Icon itemIcon, String itemText) {
+class MenuItem extends StatelessWidget {
+  final String icon;
+  final String itemText;
+  const MenuItem(this.icon, this.itemText);
+  @override
+  Widget build(BuildContext context) {
     return ListTile(
-      leading: itemIcon,
+      leading: Text(icon,
+          style: TextStyle(
+            fontSize: 30.0,
+          )),
       title: Text(itemText),
     );
   }
+}
 
+class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Menu'),
+          title: Text('Menu Demo'),
           backgroundColor: Colors.cyan,
         ),
         body: Column(
@@ -26,31 +35,42 @@ class Menu extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Row(children: [
-                // Error 1: Overflow, surround text with expanded to fix error
+                // Error 1: Overflow, surround Text with expanded to fix error
                 Text(
-                    'Welcome to one of the best virtual restaurants you\'ll ever visit'),
+                    'Welcome to Dasheats, a restaurant providing fast, '
+                    'affordable, and quality experience. '
+                    'Explore the delicious menu items below.'),
               ]),
             ),
-            // does text overflow to the widget direction? since it's column, it would overflow to the bottom?
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Row(children: [
-                Text('Icon'),
-                // Error 2: not sure how to fix this problem, divider not showing
-                VerticalDivider(),
-                Text('Description'),
-              ]),
-            ),
-            // Error #3: Wrap ListView with Expanded to fix RenderBox not laid out error
+            // Error 2: RenderBox not laid out error, surround ListView with Expanded to fix error
             Expanded(
               child: ListView(
                 children: [
-                  createMenuItem(
-                      Icon(Icons.local_drink, color: Colors.blue), 'Water'),
-                  createMenuItem(Icon(Icons.fastfood, color: Colors.blue),
-                      'A delicious burger entrée with chilled soda on the side'),
+                  MenuItem('🥤', 'Soda'),
+                  MenuItem('🍔', 'Burgers'),
+                  MenuItem('🍟', 'Fries'),
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FlatButton(
+                  onPressed: null,
+                  child: Text(
+                    'Pickup',
+                  ),
+                ),
+                // Error 3: Unable to see the Divider despite being in the code
+                // The divider does not cause any error messages
+                VerticalDivider(),
+                FlatButton(
+                  onPressed: null,
+                  child: Text(
+                    'Delivery',
+                  ),
+                )
+              ],
             )
           ],
         ),
