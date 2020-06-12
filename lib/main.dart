@@ -61,7 +61,7 @@ class Menu extends StatelessWidget {
                     'Pickup',
                   ),
                 ),
-                // Error 3: Unable to see the Divider despite being in the code
+                // Error 3: Unable to see the VerticalDivider despite being in the code
                 // The divider does not cause any error messages
                 VerticalDivider(),
                 FlatButton(
