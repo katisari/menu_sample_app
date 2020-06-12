@@ -23,14 +23,17 @@ class Menu extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Row(children: [
-              // Error 1: Overflow, surround text with expanded to fix error
-              Text(
-                  'Welcome to one of the best virtual restaurants you\'ll ever visit'),
-            ]),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Row(children: [
+                // Error 1: Overflow, surround text with expanded to fix error
+                Text(
+                    'Welcome to one of the best virtual restaurants you\'ll ever visit'),
+              ]),
+            ),
             // does text overflow to the widget direction? since it's column, it would overflow to the bottom?
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(10.0),
               child: Row(children: [
                 Text('Icon'),
                 // Error 2: not sure how to fix this problem, divider not showing
@@ -39,14 +42,15 @@ class Menu extends StatelessWidget {
               ]),
             ),
             // Error #3: Wrap ListView with Expanded to fix RenderBox not laid out error
-            ListView(
-              children: [
-                createMenuItem(
-                    Icon(Icons.local_drink, color: Colors.blue), 'Water'),
-                createMenuItem(
-                    Icon(Icons.fastfood, color: Colors.blue),
-                    'A delicious burger entrée with chilled soda on the side'),
-              ],
+            Expanded(
+              child: ListView(
+                children: [
+                  createMenuItem(
+                      Icon(Icons.local_drink, color: Colors.blue), 'Water'),
+                  createMenuItem(Icon(Icons.fastfood, color: Colors.blue),
+                      'A delicious burger entrée with chilled soda on the side'),
+                ],
+              ),
             )
           ],
         ),
