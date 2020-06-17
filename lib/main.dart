@@ -43,20 +43,22 @@ class Menu extends StatelessWidget {
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        // Issue 1: Overflow Error, Wrap Text in Expanded
-        // Text is unconsrained, leading it to go off screen
-        Expanded(
-          child: Text(
-            'Explore the restaurant\'s delicious menu items below!',
-            style: TextStyle(
-              fontSize: 18.0,
-              height: 1.0,
+    return Padding(
+      padding: EdgeInsets.only(bottom: 20.0,),
+          child: Row(
+        children: [
+          // Issue 1: Overflow Error, Wrap Text in Expanded
+          // Text is unconsrained, leading it to go off screen
+          Expanded(
+            child: Text(
+              'Explore the restaurant\'s delicious menu items below!',
+              style: TextStyle(
+                fontSize: 18.0,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
