@@ -33,56 +33,75 @@ class Menu extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(children: [
-            Row(
-              children: [
-                // Issue 1: Overflow Error, Wrap Text in Expanded
-                // Text is unconsrained, leading it to go off screen
-                Text(
-                  'Explore our restaurant\'s delicious menu items below!',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    height: 1.0,
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              // Issue 2: Renderbox Not laid out error, Wrap it in Expanded
-              child: ListView(
-                children: [
-                  MenuItem('🥤', 'Soda'),
-                  MenuItem('🍔', 'Burger'),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Pickup',
-                  ),
-                ),
-                // Issue 3: divider does not show, wrap divider in Container and give it specific height
-                Container(
-                  height: 15.0,
-                  child: VerticalDivider(
-                    thickness: 5.0,
-                  ),
-                ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Delivery',
-                  ),
-                )
-              ],
-            )
-          ]),
+          child: Column(children: [Example1(), Example2(), Example3()]),
         ),
       ),
+    );
+  }
+}
+
+class Example1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        // Issue 1: Overflow Error, Wrap Text in Expanded
+        // Text is unconsrained, leading it to go off screen
+        Expanded(
+          child: Text(
+            'Explore the restaurant\'s delicious menu items below!',
+            style: TextStyle(
+              fontSize: 18.0,
+              height: 1.0,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class Example2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      // Issue 2: Renderbox Not laid out error, Wrap it in Expanded
+      child: ListView(
+        children: [
+          MenuItem('🥤', 'Soda'),
+          MenuItem('🍔', 'Burger'),
+        ],
+      ),
+    );
+  }
+}
+
+class Example3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Pickup',
+          ),
+        ),
+        // Issue 3: divider does not show, wrap divider in Container and give it specific height
+        Container(
+          height: 15.0,
+          child: VerticalDivider(
+            thickness: 5.0,
+          ),
+        ),
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Delivery',
+          ),
+        )
+      ],
     );
   }
 }
