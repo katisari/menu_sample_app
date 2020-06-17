@@ -4,45 +4,100 @@ void main() {
   runApp(Menu());
 }
 
-class Menu extends StatelessWidget {
-  Padding createMenuItem(Icon itemIcon, String itemText) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Row(
-        children: [
-          itemIcon,
-          SizedBox(width: 15),
-          Expanded(
-                      child: Text(
-              itemText,
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
-        ],
+class MenuItem extends StatelessWidget {
+  final String icon;
+  final String itemText;
+  const MenuItem(this.icon, this.itemText);
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Text(
+        icon,
+        style: TextStyle(
+          fontSize: 30.0,
+        ),
       ),
+      title: Text(itemText),
     );
   }
+}
 
+class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Menu'),
-          backgroundColor: Colors.cyan,
+          title: Text('Menu Demo: Solution'),
         ),
-        body:  Column(
-            children: [
-              createMenuItem(
-                  Icon(Icons.local_drink, color: Colors.blue), 'Water'),
-              createMenuItem(
-                  Icon(Icons.fastfood, color: Colors.blue),
-                  'A delicious burger entrée with chilled soda on the side, '
-                  'perfect for a summer day'),
-            ],
+        body: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(children: [Example1(), Example2(), Example3()]),
+        ),
+      ),
+    );
+  }
+}
+
+class Example1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: 20.0,
+      ),
+      child: Row(
+        children: [
+          // Issue 1: Overflow Error, Wrap Text in Expanded
+          // Text is unconsrained, leading it to go off screen
+          Text(
+            'Explore the restaurant\'s delicious menu items below!',
+            style: TextStyle(
+              fontSize: 18.0,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Example2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        MenuItem('🥤', 'Soda'),
+        MenuItem('🍔', 'Burger'),
+      ],
+    );
+  }
+}
+
+class Example3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Pickup',
           ),
         ),
+        // Issue 3: divider does not show, wrap divider in Container and give it specific height
+        VerticalDivider(
+          thickness: 5.0,
+        ),
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Delivery',
+          ),
+        )
+      ],
     );
   }
 }
