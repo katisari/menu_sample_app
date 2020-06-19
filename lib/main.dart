@@ -35,7 +35,8 @@ class Menu extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Column(children: [
             // Replace the examples here
-            Example1()]),
+            Example2(),
+          ]),
         ),
       ),
     );
@@ -72,6 +73,7 @@ class Example2 extends StatelessWidget {
       children: [
         MenuItem('🥤', 'Soda'),
         MenuItem('🍔', 'Burger'),
+        MenuItem('🍟', 'Fries'),
       ],
     );
   }
@@ -89,7 +91,6 @@ class Example3 extends StatelessWidget {
             'Pickup',
           ),
         ),
-        // Issue 3: divider does not show, wrap divider in Container and give it specific height
         VerticalDivider(
           thickness: 5.0,
         ),
