@@ -35,7 +35,7 @@ class Menu extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Column(children: [
             // Replace the examples here
-            Example2(),
+            Example3(),
           ]),
         ),
       ),
@@ -85,8 +85,10 @@ class Example3 extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        FlatButton(
-          onPressed: () {},
+        RaisedButton(
+          onPressed: () {
+            print('Pickup button pressed.');
+          },
           child: Text(
             'Pickup',
           ),
@@ -94,8 +96,10 @@ class Example3 extends StatelessWidget {
         VerticalDivider(
           thickness: 5.0,
         ),
-        FlatButton(
-          onPressed: () {},
+        RaisedButton(
+          onPressed: () {
+            print('Delivery button pressed.');
+          },
           child: Text(
             'Delivery',
           ),
