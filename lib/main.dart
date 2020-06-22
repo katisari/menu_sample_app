@@ -33,7 +33,10 @@ class Menu extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(children: [Example1(), Example2(), Example3()]),
+          child: Column(children: [
+            // Replace the examples here
+            Example1(), Example2(), Example3(),
+          ]),
         ),
       ),
     );
@@ -44,8 +47,10 @@ class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 20.0,),
-          child: Row(
+      padding: EdgeInsets.only(
+        bottom: 20.0,
+      ),
+      child: Row(
         children: [
           // Issue 1: Overflow Error, Wrap Text in Expanded
           // Text is unconsrained, leading it to go off screen
@@ -67,11 +72,11 @@ class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      // Issue 2: Renderbox Not laid out error, Wrap it in Expanded
       child: ListView(
         children: [
           MenuItem('🥤', 'Soda'),
           MenuItem('🍔', 'Burger'),
+          MenuItem('🍟', 'Fries'),
         ],
       ),
     );
@@ -81,29 +86,32 @@ class Example2 extends StatelessWidget {
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        FlatButton(
-          onPressed: () {},
-          child: Text(
-            'Pickup',
+    return SizedBox(
+      height: 48.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          RaisedButton(
+            onPressed: () {
+              print('Pickup button pressed.');
+            },
+            child: Text(
+              'Pickup',
+            ),
           ),
-        ),
-        // Issue 3: divider does not show, wrap divider in Container and give it specific height
-        Container(
-          height: 15.0,
-          child: VerticalDivider(
+          VerticalDivider(
             thickness: 5.0,
           ),
-        ),
-        FlatButton(
-          onPressed: () {},
-          child: Text(
-            'Delivery',
-          ),
-        )
-      ],
+          RaisedButton(
+            onPressed: () {
+              print('Delivery button pressed.');
+            },
+            child: Text(
+              'Delivery',
+            ),
+          )
+        ],
+      ),
     );
   }
 }
