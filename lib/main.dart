@@ -35,7 +35,7 @@ class Menu extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Column(children: [
             // Replace the examples here
-            Example3(),
+            Example1(),
           ]),
         ),
       ),
@@ -54,6 +54,8 @@ class Example1 extends StatelessWidget {
         children: [
           // Issue 1: Overflow Error, Wrap Text in Expanded
           // Text is unconsrained, leading it to go off screen
+          Icon(Icons.fastfood),
+          SizedBox(width:10.0,),
           Text(
             'Explore the restaurant\'s delicious menu items below!',
             style: TextStyle(
