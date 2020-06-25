@@ -29,7 +29,7 @@ class Menu extends StatelessWidget {
       title: 'Flutter Demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Demo'),
+          title: Text('Layout Debuging Demo'),
         ),
         body: Padding(
           padding: EdgeInsets.all(20),
