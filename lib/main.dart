@@ -34,7 +34,8 @@ class Menu extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(20),
           child: Column(children: [
-            // Replace the examples here
+            // TODO: Replace each Example here
+            // Change Example1() to Example2() tp Example3() as you progress through the tutorial
             Example1(),
           ]),
         ),
@@ -43,44 +44,38 @@ class Menu extends StatelessWidget {
   }
 }
 
+// Issue 1: Overflow Error
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        bottom: 20.0,
-      ),
-      child: Row(
-        children: [
-          // Issue 1: Overflow Error, Wrap Text in Expanded
-          // Text is unconsrained, leading it to go off screen
-          Icon(Icons.fastfood),
-          SizedBox(width:10.0,),
-          Text(
-            'Explore the restaurant\'s delicious menu items below!',
-            style: TextStyle(
-              fontSize: 18.0,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Example2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
+    return Row(
       children: [
-        MenuItem('🥤', 'Soda'),
-        MenuItem('🍔', 'Burger'),
-        MenuItem('🍟', 'Fries'),
+        Text(
+          'Explore the restaurant\'s delicious menu items below!',
+          style: TextStyle(
+            fontSize: 18.0,
+          ),
+        ),
       ],
     );
   }
 }
 
+// Issue 2: RenderBox not laid out error
+class Example2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        MenuItem('🍔', 'Burger'),
+        MenuItem('🍟', 'Fries'),
+        MenuItem('🥤', 'Soda'),
+      ],
+    );
+  }
+}
+
+// Issue 3: VerticalDivider not shown
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
