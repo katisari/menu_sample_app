@@ -47,6 +47,7 @@ class Menu extends StatelessWidget {
 
 // Fixed Issue 1: Overflow Error, Wrap Text in Expanded
 // Cause: Text was unconsrained, leading it to go off screen
+// Solution: Wrap Text in Exapnded
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -67,6 +68,7 @@ class Example1 extends StatelessWidget {
 
 // Fixed Issue 2: RenderBox not laid out error
 // Cause : ListView was taking up infinity height so program couldn't determine its size
+// Solution: Wrap ListView in Expanded
 class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -84,6 +86,7 @@ class Example2 extends StatelessWidget {
 
 // Fixed Issue 3: VerticalDivider not shown
 // Cause: Vertical Divider height was 0 because Row's height was unconstrained
+// Solution: Wrap Row in SizedBox and give it a height
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
