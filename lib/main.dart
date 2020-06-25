@@ -34,8 +34,10 @@ class Menu extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(20),
           child: Column(children: [
-            // Replace the examples here
-            Example1(), Example2(), Example3(),
+            // Examples are put here!
+            Example1(),
+            Example2(),
+            Example3(),
           ]),
         ),
       ),
@@ -43,46 +45,45 @@ class Menu extends StatelessWidget {
   }
 }
 
+// Fixed Issue 1: Overflow Error, Wrap Text in Expanded
+// Cause: Text was unconsrained, leading it to go off screen
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        bottom: 20.0,
-      ),
-      child: Row(
-        children: [
-          // Issue 1: Overflow Error, Wrap Text in Expanded
-          // Text is unconsrained, leading it to go off screen
-          Expanded(
-            child: Text(
-              'Explore the restaurant\'s delicious menu items below!',
-              style: TextStyle(
-                fontSize: 18.0,
-              ),
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            'Explore the restaurant\'s delicious menu items below!',
+            style: TextStyle(
+              fontSize: 18.0,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
 
+// Fixed Issue 2: RenderBox not laid out error
+// Cause : ListView was taking up infinity height so program couldn't determine its size
 class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView(
         children: [
-          MenuItem('🥤', 'Soda'),
           MenuItem('🍔', 'Burger'),
           MenuItem('🍟', 'Fries'),
+          MenuItem('🥤', 'Soda'),
         ],
       ),
     );
   }
 }
 
+// Fixed Issue 3: VerticalDivider not shown
+// Cause: Vertical Divider height was 0 because Row's height was unconstrained
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
