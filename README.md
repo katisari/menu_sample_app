@@ -6,5 +6,5 @@ A new Flutter project.
 
 In this tutorial, you will be debugging 3 layout issues presented in the code.
 Afterwards, we'll combine them to have a completed menu app.
-![Finished App](https://github.com/katisar/images/app.png)
+![Finished App](/images/app.png)
 
