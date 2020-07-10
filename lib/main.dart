@@ -34,8 +34,8 @@ class Menu extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(20),
           child: Column(children: [
-            // TODO: Replace each Example here
-            // Change Example1() to Example2() tp Example3() as you progress through the tutorial
+            // Replace Example1() to Example2() to Example3()
+            // as you progress through the article
             Example1(),
           ]),
         ),
@@ -61,7 +61,7 @@ class Example1 extends StatelessWidget {
   }
 }
 
-// Issue 2: RenderBox not laid out error
+// Issue 2: Viewport was given unbounded height Error
 class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
