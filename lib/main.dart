@@ -33,11 +33,12 @@ class Menu extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(children: [
-            // Replace Example1() with Example2() and
-            // Example2() with Example3() as you progress through the article
-            Example2(),
-          ]),
+          child: Column(
+            children: [
+              // Insert/delete code here
+              Example1(),
+            ],
+          ),
         ),
       ),
     );
