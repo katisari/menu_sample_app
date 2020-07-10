@@ -34,9 +34,9 @@ class Menu extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(20),
           child: Column(children: [
-            // Replace Example1() to Example2() to Example3()
-            // as you progress through the article
-            Example1(),
+            // Replace Example1() with Example2() and
+            // Example2() with Example3() as you progress through the article
+            Example2(),
           ]),
         ),
       ),
