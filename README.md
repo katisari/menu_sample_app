@@ -1,10 +1,10 @@
-# Menu App
+# Menu App 🍔
+A menu app composed of common Flutter layout widgets.
 
-A new Flutter project.
+## How to Debug layout Issues
 
-## Getting Started
+In this tutorial, you will be debugging 3 layout issues using the Flutter Inspector.
+Each issue is separated into different classes. Issue 1 corresponds to Example1() and so on.
+We'll combine them  at the end to have a completed menu app.
 
-In this tutorial, you will be debugging 3 layout issues presented in the code.
-Afterwards, we'll combine them to have a completed menu app.
 ![Finished App](/images/app.png)
-
