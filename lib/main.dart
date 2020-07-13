@@ -32,7 +32,7 @@ class Menu extends StatelessWidget {
           title: Text('Menu Demo'),
         ),
         body: Padding(
-          padding: EdgeInsets.all(25.0),
+          padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
               // Modify code here
@@ -72,8 +72,10 @@ class Example2 extends StatelessWidget {
     return ListView(
       children: [
         MenuItem('🍔', 'Burger'),
+        MenuItem('🌭', 'Hot Dog'),
         MenuItem('🍟', 'Fries'),
         MenuItem('🥤', 'Soda'),
+        MenuItem('🍦', 'Ice Cream'),
       ],
     );
   }
