@@ -32,10 +32,10 @@ class Menu extends StatelessWidget {
           title: Text('Menu Demo'),
         ),
         body: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(25.0),
           child: Column(
             children: [
-              // Insert/delete code here
+              // Modify and Insert code here
               Example1(),
             ],
           ),
@@ -49,15 +49,18 @@ class Menu extends StatelessWidget {
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'Explore the restaurant\'s delicious menu items below!',
-          style: TextStyle(
-            fontSize: 18.0,
+    return Padding(
+      padding: EdgeInsets.only(bottom: 30.0),
+      child: Row(
+        children: [
+          Text(
+            'Explore the restaurant\'s delicious menu items below!',
+            style: TextStyle(
+              fontSize: 18.0,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -91,6 +94,7 @@ class Example3 extends StatelessWidget {
             'Pickup',
           ),
         ),
+        // This widget is not shown on screen initially.
         VerticalDivider(
           thickness: 5.0,
         ),
