@@ -35,7 +35,7 @@ class Menu extends StatelessWidget {
           padding: EdgeInsets.all(25.0),
           child: Column(
             children: [
-              // Modify and Insert code here
+              // Modify code here
               Example1(),
             ],
           ),
