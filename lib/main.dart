@@ -37,6 +37,8 @@ class Menu extends StatelessWidget {
             children: [
               // Modify code here
               Example1(),
+              Example2(),
+              Example3()
             ],
           ),
         ),
@@ -55,10 +57,12 @@ class Example1 extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 30.0),
       child: Row(
         children: [
-          Text(
-            'Explore the restaurant\'s delicious menu items below!',
-            style: TextStyle(
-              fontSize: 18.0,
+          Expanded(
+            child: Text(
+              'Explore the restaurant\'s delicious menu items below!',
+              style: TextStyle(
+                fontSize: 18.0,
+              ),
             ),
           ),
         ],
