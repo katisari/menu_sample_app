@@ -91,7 +91,7 @@ class Example2 extends StatelessWidget {
   }
 }
 
-// Fixed Issue 3: VerticalDivider not shown
+// Fixed Issue 3: Invisible VerticalDivider
 // Cause: VerticalDivider's height was 0 because Row's height was unconstrained
 // Solution: Wrap Row in SizedBox and give it a height
 class Example3 extends StatelessWidget {
