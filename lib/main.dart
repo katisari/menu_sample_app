@@ -5,9 +5,9 @@ void main() {
 }
 
 class MenuItem extends StatelessWidget {
+  const MenuItem(this.icon, this.itemText);
   final String icon;
   final String itemText;
-  const MenuItem(this.icon, this.itemText);
   @override
   Widget build(BuildContext context) {
     return ListTile(
