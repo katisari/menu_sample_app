@@ -81,7 +81,7 @@ class Example2 extends StatelessWidget {
   }
 }
 
-// Issue 3: VerticalDivider not shown
+// Issue 3: Invisible VerticalDivider
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
