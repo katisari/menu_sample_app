@@ -98,6 +98,7 @@ class Example3 extends StatelessWidget {
         ),
         // This widget is not shown on screen initially.
         VerticalDivider(
+          width: 20.0,
           thickness: 5.0,
         ),
         RaisedButton(
