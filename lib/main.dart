@@ -5,9 +5,9 @@ void main() {
 }
 
 class MenuItem extends StatelessWidget {
+  const MenuItem(this.icon, this.itemText);
   final String icon;
   final String itemText;
-  const MenuItem(this.icon, this.itemText);
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -37,6 +37,8 @@ class Menu extends StatelessWidget {
             children: [
               // Modify code here
               Example1(),
+              Example2(),
+              Example3(),
             ],
           ),
         ),
@@ -45,7 +47,7 @@ class Menu extends StatelessWidget {
   }
 }
 
-// Issue 1: Overflow Error
+// Problem 1: Overflow Error
 class Example1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,7 @@ class Example1 extends StatelessWidget {
   }
 }
 
-// Issue 2: Viewport was given unbounded height Error
+// Problem 2: Viewport was given unbounded height Error
 class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,7 @@ class Example2 extends StatelessWidget {
   }
 }
 
-// Issue 3: VerticalDivider not shown
+// Problem 3: Invisible VerticalDivider
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,6 +100,7 @@ class Example3 extends StatelessWidget {
         ),
         // This widget is not shown on screen initially.
         VerticalDivider(
+          width: 20.0,
           thickness: 5.0,
         ),
         RaisedButton(
