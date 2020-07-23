@@ -37,8 +37,6 @@ class Menu extends StatelessWidget {
             children: [
               // Modify code here
               Example1(),
-              Example2(),
-              Example3(),
             ],
           ),
         ),
