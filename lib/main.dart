@@ -47,7 +47,7 @@ class Menu extends StatelessWidget {
   }
 }
 
-// Fixed Issue 1: Overflow Error
+// Fixed Problem 1: Overflow Error
 // Cause: Text was unconsrained, leading it to go off screen
 // Solution: Wrap Text in Exapnded
 class Example1 extends StatelessWidget {
@@ -71,7 +71,7 @@ class Example1 extends StatelessWidget {
   }
 }
 
-// Fixed Issue 2: Viewport was given unbounded height Error
+// Fixed Problem 2: Viewport was given unbounded height Error
 // Cause : ListView's height constraint was inifinity, so no size was assigned
 // Solution: Wrap ListView in Expanded
 class Example2 extends StatelessWidget {
@@ -91,14 +91,14 @@ class Example2 extends StatelessWidget {
   }
 }
 
-// Fixed Issue 3: Invisible VerticalDivider
+// Fixed Problem 3: Invisible VerticalDivider
 // Cause: VerticalDivider's height was 0 because Row's height was unconstrained
 // Solution: Wrap Row in SizedBox and give it a height
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48.0,
+      height: 50.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -112,6 +112,7 @@ class Example3 extends StatelessWidget {
           ),
           // This widget is not shown on screen initially.
           VerticalDivider(
+            width: 20.0,
             thickness: 5.0,
           ),
           RaisedButton(
